@@ -31,7 +31,7 @@ setup(
                  "config files and command line arguments"),
     author="Calen Pennington",
     author_email="cpennington@wgen.net",
-    py_modules=['metargs'],
+    packages=['metargs'],
     install_requires=[
         'argparse',
     ],
