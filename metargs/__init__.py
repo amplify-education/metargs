@@ -195,8 +195,11 @@ class Option(object):
         """
         if not (self.args or self.options):
             if namespace is not None:
-                for path in self.config_paths:
-                    setattr(namespace, "_".join(path), from_config)
+                if self.dest is None:
+                    for path in self.config_paths:
+                        setattr(namespace, "_".join(path), from_config)
+                else:
+                    setattr(namespace, self.dest, from_config)
             return 
 
         kwargs = {}
